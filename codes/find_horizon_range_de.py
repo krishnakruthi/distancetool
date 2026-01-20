@@ -183,7 +183,7 @@ def find_horizon_range(m1,m2,asdfile,approx=ls.IMRPhenomD):
 
     #Find out the redshift at which we detect 50%/90% of the sources at the redshift
     z_response50=max(z[where(compensate_detect_frac>=0.5)])
-    z_response10=max(z[where(compensate_detect_frac>=0.1)])
+    z_response90=max(z[where(compensate_detect_frac>=0.1)])
 
     vol_sum=sum(unit_volume)
     #Find out the redshifts that 50%/90% of the sources lie within assuming constant-comoving-rate density
@@ -200,4 +200,4 @@ def find_horizon_range(m1,m2,asdfile,approx=ls.IMRPhenomD):
     z_mean=sum(unit_volume*z)/vol_sum
     sfr_z_mean=sum(unit_volume*sfr(z)/sfr(0)*z)/sfr_vol_sum
 
-	return (3.*vol_sum/4./pi)**(1./3.),z_response50,z_response90,horizon_redshift,vol_sum/1E9,z50,z90,sfr_z50,sfr_z90,z_mean,sfr_z_mean  
+    return (3.*vol_sum/4./pi)**(1./3.),z_response50,z_response90,horizon_redshift,vol_sum/1E9,z50,z90,sfr_z50,sfr_z90,z_mean,sfr_z_mean  

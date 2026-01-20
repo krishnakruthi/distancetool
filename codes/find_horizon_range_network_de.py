@@ -179,7 +179,7 @@ def find_horizon_range(m1,m2,network,asdfile,pwfile,approx=ls.IMRPhenomD):
 			return	
 		
 	#sampled universal antenna power pattern for code sped up
-	w_sample,P_sample=genfromtxt('pw_'+pwfile+'.txt',unpack=True)
+	w_sample,P_sample=genfromtxt('../data/pw_'+pwfile+'.txt',unpack=True)
 	P=interp1d(w_sample, P_sample,bounds_error=False,fill_value=0.0)
 	n_zstep=400
 	print("horizon_redshift",horizon_redshift)
